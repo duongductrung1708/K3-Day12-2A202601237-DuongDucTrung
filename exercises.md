@@ -131,10 +131,10 @@ Ghi lại **một** lỗi bạn gặp khi deploy lên cloud (build fail, health 
 timeout, sai REDIS_URL, app không đọc `$PORT`...): thông báo lỗi là gì, bạn
 tìm ra nguyên nhân bằng cách nào, và sửa ra sao?
 
-Lỗi: Health check timeout khi deploy lên Railway.
+Lỗi: Endpoints trả về 404 khi deploy lên Render.
 
-Thông báo lỗi: Container health check failed after 3 retries.
+Thông báo lỗi: /health, /ready, /ask đều trả 404 Not Found.
 
-Tìm nguyên nhân: Kiểm tra log Railway thấy health check gọi /health nhưng không có response. Đọc code phát hiện /health đang phụ thuộc Redis ping, nhưng Railway Redis add-on chưa sẵn sàng khi container start.
+Tìm nguyên nhân: Kiểm tra log Render thấy app chạy bình thường nhưng không thể truy cập endpoints. Đọc render.yaml phát hiện thiếu biến môi trường PORT. Render tự động gán PORT nhưng app không đọc đúng.
 
-Cách sửa: Tách /health (không gọi Redis) và /ready (gọi Redis ping). /health chỉ kiểm tra process còn sống, /ready mới kiểm tra dependency. Sau khi sửa, health check pass.
+Cách sửa: Thêm PORT: "10000" vào render.yaml để app chạy đúng port mà Render cung cấp. Sau khi sửa, endpoints hoạt động bình thường.
