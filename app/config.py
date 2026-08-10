@@ -41,8 +41,18 @@ class Settings(BaseSettings):
     )
 
     # TODO (CP1): khai báo 6 trường theo bảng trên, ví dụ:
-    #     port: int = 8000
-    #     agent_api_key: str
+    port: int = 8000
+    agent_api_key: str                 # Bắt buộc — app chết ngay nếu thiếu (fail-fast)
+    redis_url: str = "redis://localhost:6379/0"
+    rate_limit_per_minute: int = 10
+    monthly_budget_usd: float = 10.0
+    log_level: str = "INFO"
+
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        extra="ignore",
+    )
 
 
 @lru_cache(maxsize=1)

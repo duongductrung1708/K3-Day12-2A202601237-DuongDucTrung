@@ -8,32 +8,32 @@
 
 ## Thông Tin Học Viên
 
-| Mục | Nội dung |
-|-----|----------|
-| Họ và tên | (điền họ tên) |
-| Mã học viên | (điền mã học viên) |
-| Repo | (điền link repo DAY12-...) |
+| Mục         | Nội dung                                                                |
+| ----------- | ----------------------------------------------------------------------- |
+| Họ và tên   | Dương Đức Trung                                                         |
+| Mã học viên | 2A202601237                                                             |
+| Repo        | https://github.com/duongductrung1708/K3-Day12-2A202601237-DuongDucTrung |
 
 ## Service
 
-| Mục | Nội dung |
-|-----|----------|
-| Public URL | https://TODO-thay-bang-url-that.up.railway.app |
-| Platform | Railway / Render / Cloud Run — (điền platform bạn dùng) |
-| Ngày deploy | (điền ngày) |
+| Mục         | Nội dung                        |
+| ----------- | ------------------------------- |
+| Public URL  | http://localhost:8000           |
+| Platform    | Local Fallback (Docker Compose) |
+| Ngày deploy | 2026-08-10                      |
 
 ## Biến Môi Trường Đã Set Trên Cloud
 
 Ghi tên biến và **nguồn giá trị**, không ghi giá trị:
 
-| Biến | Đã set | Ghi chú |
-|------|--------|---------|
-| `PORT` | ✅ | platform tự gán |
-| `AGENT_API_KEY` | ✅ | đặt trong dashboard, không nằm trong repo |
-| `REDIS_URL` | ✅ | (điền: Redis add-on của platform / Upstash / ...) |
-| `RATE_LIMIT_PER_MINUTE` | ✅ | 10 |
-| `MONTHLY_BUDGET_USD` | ✅ | 10.0 |
-| `LOG_LEVEL` | ✅ | INFO |
+| Biến                    | Đã set | Ghi chú                                       |
+| ----------------------- | ------ | --------------------------------------------- |
+| `PORT`                  | ✅     | đặt trong .env file                           |
+| `AGENT_API_KEY`         | ✅     | đặt trong .env file, không nằm trong repo     |
+| `REDIS_URL`             | ✅     | redis://redis:6379/0 (Docker Compose service) |
+| `RATE_LIMIT_PER_MINUTE` | ✅     | 10                                            |
+| `MONTHLY_BUDGET_USD`    | ✅     | 10.0                                          |
+| `LOG_LEVEL`             | ✅     | INFO                                          |
 
 ## Lệnh Kiểm Tra
 
@@ -73,7 +73,19 @@ done; echo
 Dán output của các lệnh trên vào đây:
 
 ```
-(điền output)
+HTTP/1.1 200 OK
+{"status":"ok","service":"day12-agent","version":"1.0.0"}
+
+HTTP/1.1 200 OK
+{"status":"ready","redis":true}
+
+HTTP/1.1 401 Unauthorized
+{"detail":"invalid or missing API key"}
+
+HTTP/1.1 200 OK
+{"answer":"Deploy là quá trình đưa ứng dụng từ môi trường phát triển sang môi trường sản xuất.","user_id":"sv-test","history_length":1,"cost_usd":0.0001,"tokens":{"in":10,"out":20}}
+
+200 200 200 200 200 200 200 200 200 200 429 429 429 429 429
 ```
 
 ## Ảnh Chụp Màn Hình
@@ -97,5 +109,6 @@ Không đăng ký được tài khoản cloud? Vẫn nộp được bài, nhưng
 5. Ghi rõ lý do không deploy được vào phần dưới đây:
 
 ```
-(điền lý do nếu dùng phương án dự phòng, ngược lại xóa mục này)
+Sử dụng phương án dự phòng do không có tài khoản cloud (Railway/Render) sẵn có.
+Đã deploy thành công bằng Docker Compose với 3 agent replicas và Redis service.
 ```
