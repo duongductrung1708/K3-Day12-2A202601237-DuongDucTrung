@@ -56,3 +56,4 @@ jobs:
         run: |
           echo "Deploy step - requires RENDER_API_KEY and RENDER_SERVICE_ID secrets"
           echo "To enable real deployment, uncomment render-deploy-action in workflow"
+          echo "Secrets check: ${{ secrets.RENDER_API_KEY }} ${{ secrets.RENDER_SERVICE_ID }}"
