@@ -8,11 +8,11 @@
 
 ## Thông Tin Học Viên
 
-| Mục         | Nội dung                                                                |
-| ----------- | ----------------------------------------------------------------------- |
-| Họ và tên   | Dương Đức Trung                                                         |
-| Mã học viên | 2A202601237                                                             |
-| Repo        | https://github.com/duongductrung1708/K3-Day12-2A202601237-DuongDucTrung |
+| Mục         | Nội dung                                                             |
+| ----------- | -------------------------------------------------------------------- |
+| Họ và tên   | Dương Đức Trung                                                      |
+| Mã học viên | 2A202601237                                                          |
+| Repo        | https://github.com/duongductrung1708/DAY12-2A202601237-DuongDucTrung |
 
 ## Service
 
