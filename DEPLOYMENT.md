@@ -16,11 +16,11 @@
 
 ## Service
 
-| Mục         | Nội dung                        |
-| ----------- | ------------------------------- |
-| Public URL  | http://localhost:8000           |
-| Platform    | Local Fallback (Docker Compose) |
-| Ngày deploy | 2026-08-10                      |
+| Mục         | Nội dung                              |
+| ----------- | ------------------------------------- |
+| Public URL  | https://day12-agent-0oan.onrender.com |
+| Platform    | Render                                |
+| Ngày deploy | 2026-08-10                            |
 
 ## Biến Môi Trường Đã Set Trên Cloud
 
