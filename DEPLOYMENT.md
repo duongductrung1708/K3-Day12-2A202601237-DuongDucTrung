@@ -83,7 +83,7 @@ HTTP/1.1 401 Unauthorized
 {"detail":"invalid or missing API key"}
 
 HTTP/1.1 200 OK
-{"answer":"Deploy là quá trình đưa ứng dụng từ môi trường phát triển sang môi trường sản xuất.","user_id":"sv-test","history_length":1,"cost_usd":0.0001,"tokens":{"in":10,"out":20}}
+{"answer":"Ngắn gọn: Hello thuộc vào ba yếu tố — cấu hình qua biến môi trường, health check để orchestrator biết trạng thái, và giới hạn tài nguyên.","user_id":"WZDvAfEptHDT8FBPQu6x0Ky6kjWRZhh3pGCFGL4vgxo","history_length":0,"cost_usd":0.0001,"tokens":{"in":10,"out":20}}
 
 200 200 200 200 200 200 200 200 200 200 429 429 429 429 429
 ```
